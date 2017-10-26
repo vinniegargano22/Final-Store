@@ -1,4 +1,4 @@
-<p id="notice" class="w3-panel"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
 
@@ -18,11 +18,12 @@
       <tr>
         <td><%= product.title %></td>
         <td><%= strip_tags(product.description) %></td>
-        <td><%= image_tag(product.image_url) %></td>
+        <td><%= image_tag(product.image_url) %>
+        <p><%= product.image_url %></p></td>
         <td><%= number_to_currency(product.price) %></td>
-        <td><%= link_to 'Show', product , class:"w3-button w3-light-gray" %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) , class:"w3-button w3-light-gray" %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } , class:"w3-button w3-light-gray" %></td>
+        <td><%= link_to 'Show', product , class:"w3-button w3-light-gray w3-border" %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) , class:"w3-button w3-light-gray w3-border" %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } , class:"w3-button w3-light-gray w3-border" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -19,7 +19,7 @@
   <%= @product.title %>
 </td>
 </tr>
-
+<tr>
 <td>
   <strong>Description:</strong>
 </td>
@@ -27,7 +27,7 @@
   <%= strip_tags(@product.description) %>
 </td>
 </tr>
-
+<tr>
 <td>
   <strong>Image url:</strong>
 </td>
@@ -35,7 +35,7 @@
   <%= image_tag(@product.image_url) %>
 </td>
 </tr>
-
+<tr>
 <td>
   <strong>Price:</strong>
 </td>
@@ -47,8 +47,9 @@
 
 <tr>
 <td>
-<%= link_to 'Edit', edit_product_path(@product) ,class:"w3-button w3-light-gray" %> |
-<%= link_to 'Back', products_path , class:"w3-button w3-light-gray" %>
+<%= link_to 'Edit', edit_product_path(@product) ,class:"w3-button w3-light-gray w3-border" %></td>
+<td>
+<%= link_to 'Back', products_path , class:"w3-button w3-light-gray w3-border" %>
 </td>
 </tr>
 </tbody>
