@@ -1,35 +1,30 @@
 <p id="notice" class="w3-panel"><%= notice %></p>
+<h2>Your Cart</h2>
 
-<div class="w3-panel w3-aqua">
-
-<table class="w3-table-all">
-<thead>
-  <tr>
-    <th><h1>cart</h1></th>
-    <th></th>
-  </tr>
-</thead>
-<tbody>
-  
-<% @cart.line_items.each do |item| %>  
-<tr>
-    <td><%= item.quantity %> &times; </td><td><%= item.product.title %></td><td><%= number_to_currency(item.total_price) %></td>
- 
-</tr>
-<% end %>
-
-<tr>
-   <td colspan="2">Total Order Value </td><td><%= number_to_currency(@cart.total_price) %></td>
-<td>
-<%= link_to 'Edit', edit_cart_path(@cart) ,class:"w3-button w3-light-gray w3-border" %> 
-</td>
-<td>
-<%= link_to 'Back', carts_path , class:"w3-button w3-light-gray w3-border" %>
+<div class="panel-body w3-white">
+ <table class="table table-responsive">
+    <h3>Cart</h3>
+    <% @cart.line_items.each do |item| %>
+    <tr>
+    <td><%= item.quantity %> &times; <%= item.product.title %></td>
+    <td><%= number_to_currency(item.total_price) %></td>
+    </tr>
+    <% end %>
+    <tr>
+    <td colspan="2">Total Order Value </td>
+    <td><%= number_to_currency(@cart.total_price) %></td>
+    </tr>
+ </table>
+</div>
 </td>
 </tr>
 </tbody>
 </table>
+<div>
+<%= link_to 'Back', carts_path , class:"w3-button w3-purple w3-border" %>
+<%= link_to 'Edit', edit_cart_path(@cart) ,class:"w3-button w3-green w3-border" %> 
+<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' }, class:"w3-button w3-yellow w3-border" %>
+<%= link_to 'Keep Shopping', store_index_url, class:"w3-button w3-light-gray w3-border" %>
+<%= button_to "Checkout", new_order_path, method: :get, class:"w3-button w3-red w3-border" %>
+<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' }, class:"w3-button w3-blue w3-border" %>
 </div>
-
-<%= link_to 'Keep Shopping', store_index_url , class:"btn btn-primary" %>
-<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>

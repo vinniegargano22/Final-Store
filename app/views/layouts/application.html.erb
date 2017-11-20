@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IT 231 Demo W3CSS</title>
+    <title>Vinnie's Store</title>
     
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,18 +9,26 @@
 
   </head>
 
-  <body class="w3-container">
+  <body class="w3-container w3-grey">
 
-    <div class="w3-bar w3-light-grey">
+    <div class="w3-bar w3-blue">
       <a href="/" class="w3-bar-item w3-button w3-border">
-        <%= image_tag 'mad-icon.png', alt: 'The Mad Icon', height: '28', width: '28', style: 'display: block; margin-left: auto; margin-right: auto; margin-bottom: none; margin-top: none' %></a>
-      <a href="/static_pages/home" class="w3-bar-item w3-button w3-border">Home</a>
-      <a href="/" class="w3-bar-item w3-button w3-border">Store</a>
-      <a href="/static_pages/help" class="w3-bar-item w3-button w3-border">Help</a>
-      <a href="/static_pages/about" class="w3-bar-item w3-button w3-border">About</a>
-      <a href="/products" class="w3-bar-item w3-button w3-border">Products</a>
-      <a href="/carts" class="w3-bar-item w3-button w3-border">Carts</a>      
-      <a href="/line_items" class="w3-bar-item w3-button w3-border">LineItems</a>      
+      <%= image_tag 'mad-icon.png', alt: 'The Mad Icon', height: '28', width: '28', style: 'display: block; margin-left: auto; margin-right: auto; margin-bottom: none; margin-top: none' %></a>
+      <a href="/static_pages/home" class="w3-bar-item w3-button w3-border w3-grey">Home</a>
+      <a href="/" class="w3-bar-item w3-button w3-border w3-grey">Store</a>
+      <a href="/static_pages/help" class="w3-bar-item w3-button w3-border w3-grey">Help</a>
+      <a href="/static_pages/about" class="w3-bar-item w3-button w3-border w3-grey">About</a>
+      <a href="/products" class="w3-bar-item w3-button w3-border w3-grey">Products</a>
+      <a href="/carts" class="w3-bar-item w3-button w3-border w3-grey">Carts</a>      
+      <a href="/line_items" class="w3-bar-item w3-button w3-border w3-grey">LineItems</a> 
+      <a href="/users" class="w3-bar-item w3-button w3-border w3-grey">Users</a>
+      <a href="/admin" class="w3-bar-item w3-button w3-border w3-grey">Login</a>
+      <a href="/orders" class="w3-bar-item w3-button w3-border w3-grey">Orders</a>
+      
+      <% if session[:user_id] %>
+      <%= button_to 'Logout',  logout_path, method: :delete %>
+      <% end %>
+    
     </div>
 
    <div class="w3-container">
