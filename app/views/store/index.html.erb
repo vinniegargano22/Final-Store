@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>The Store</h1>
+<h1>Vinnie's Book Store</h1>
 
 <table class="w3-table-all">
   <thead>
@@ -18,7 +18,7 @@
         <td><%= strip_tags(product.description) %></td>
         <td><%= image_tag(product.image_url) %>
         <%= number_to_currency(product.price) %>
-        <%= button_to 'Add to Cart', line_items_path(product_id: product), class:"w3-button w3-light-gray w3-border" %>
+        <%= button_to 'Add to Cart', line_items_path(product_id: product), class:"w3-button w3-red w3-border" %>
         </td>
       </tr>
     <% end %>
